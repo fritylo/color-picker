@@ -1,0 +1,5 @@
+[production]
+>0.1%
+
+[development]
+last 30 chrome version # Yandex Browser support

@@ -1,0 +1,36 @@
+.color
+   width: 2em
+   height: 2em
+   
+   margin-right: 0.25em
+   margin-bottom: 0.25em
+
+   padding: 0
+   
+   &__body
+      width: 100%
+      height: 100%
+   
+   &:not(.color_no-shadow) .color__body
+      box-shadow: 0 3px 5px #00000020
+   &:not(.color_no-brad) .color__body
+      border-radius: 0.75em
+      
+.color-tip
+   &__color
+      font-family: 'Philosopher-Bold', sans-serif
+      padding: 0.4em 0.5em
+      margin: 0.1em 0
+      border: #eee
+      background: #fff
+      color: #000
+      display: inline-block
+      width: fit-content
+      border-radius: 1em
+      text-transform: uppercase
+   &__rect
+      width: 1em
+      height: 1em
+      display: inline-block
+      border-radius: 50%
+      vertical-align: -10%

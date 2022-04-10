@@ -1,0 +1,35 @@
+{
+  "name": "color-picker",
+  "author": {
+    "name": "frity co",
+    "email": "to.fritylo@gmail.com",
+    "url": "https://frity.ru"
+  },
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=development webpack --progress --config=./webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack --watch --progress --config=./webpack.config.js",
+    "prod": "cross-env NODE_ENV=production webpack --progress --config=./webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.6",
+    "laravel-mix-polyfill": "^3.0.1",
+    "null-loader": "^4.0.1",
+    "vue": "^2.6.14",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "vue-tippy": "^4.13.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^8.1.1",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "laravel-mix-imagemin": "^1.0.3",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
