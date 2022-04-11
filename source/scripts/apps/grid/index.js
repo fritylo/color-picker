@@ -14,27 +14,20 @@ const H_MAX = 360;
 const S_MAX = 100;
 const L_MAX = 80;
 
-const H_N = 18;
+const H_N = 12;
 const S_N = 5;
 const L_N = 5;
 
-const H_STEP = Math.floor((H_MAX - H_MIN) / (H_N-1));
-const S_STEP = Math.floor((S_MAX - S_MIN) / (S_N-1));
-const L_STEP = Math.floor((L_MAX - L_MIN) / (L_N-1));
+const H_STEP = ((H_MAX - H_MIN) / (H_N));
+const S_STEP = ((S_MAX - S_MIN) / (S_N-1));
+const L_STEP = ((L_MAX - L_MIN) / (L_N-1));
 
 console.log('H_STEP:', H_STEP);
 console.log('S_STEP:', S_STEP);
 console.log('L_STEP:', L_STEP);
 
-const hue = 
-   range(H_MIN, H_MAX, H_STEP).map(h => ({
-      h, s: 100, l: 50, 
-      key: `color-circle-${h}-${100}-${50}`,
-      selected: false,
-   }));
-
 const colors = 
-   range(H_MIN, H_MAX+1, H_STEP).map(h => ({
+   range(H_MIN, H_MAX+1-H_STEP, H_STEP).map(h => ({
       h, s: 100, l: 50, 
       key: `color-hue-${h}-${100}-${50}`,
       selected: false,
@@ -51,10 +44,10 @@ const colors =
 const G_MIN = 0;
 const G_MAX = 100;
 const G_N   = 10;
-const G_STEP = Math.floor((G_MAX - G_MIN) / (G_N-1));
+const G_STEP = ((G_MAX - G_MIN) / (G_N-1));
 
 const greyscale = 
-   range(G_MIN, G_MAX, G_STEP).map(l => ({
+   range(G_MIN, G_MAX+1, G_STEP).map(l => (((l = Math.round(l)) || true) && {
       h: 0, s: 0, l, 
       key: `color-${0}-${0}-${l}`,
    }));
@@ -66,7 +59,7 @@ export default {
    components: { Color, ColorCircle },
    name: "Grid",
    data: () => ({
-      colors, greyscale, hue,
+      colors, greyscale,
       colorTypeForce: 0,
       bodyColorRef: null,
    }),

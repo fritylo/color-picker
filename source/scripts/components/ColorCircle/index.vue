@@ -31,8 +31,8 @@
             :bodyStyle="{
                borderLeftWidth: '3em',
                borderLeftStyle: 'solid',
-               borderTop: '0.5em solid transparent',
-               borderBottom: '0.5em solid transparent',
+               borderTop: '0.8em solid transparent',
+               borderBottom: '0.8em solid transparent',
             }"
             
             @mouseLeft="onColorClick(color)"
