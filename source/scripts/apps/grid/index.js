@@ -67,6 +67,7 @@ export default {
    name: "Grid",
    data: () => ({
       colors, greyscale, hue,
+      colorTypeForce: 0,
       bodyColorRef: null,
    }),
    computed: {
@@ -90,14 +91,11 @@ export default {
       },
       colorFormat: {
          get() {
-            if (localStorage.getItem('c-picker--format') !== null)
-               return localStorage.getItem('c-picker--format');
-            else {
-               localStorage.setItem('c-picker--format', 'hsl');
-               return 'hsl';
-            }
+            this.colorTypeForce;
+            return localStorage.getItem('c-picker--format') || 'hsl';
          },
          set(value) {
+            this.colorTypeForce++;
             localStorage.setItem('c-picker--format', value);
          }
       }
